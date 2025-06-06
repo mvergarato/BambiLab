@@ -20,7 +20,7 @@ Explora librerías, drumkits, tutoriales y plugins gratuitos. Cada sección est�
 ### 1. Clona el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/bambilab.git
+git clone https://github.com/tu-usuario/BambiLab.git
 cd bambilab
 ```
 
