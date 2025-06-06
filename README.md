@@ -7,7 +7,7 @@ Explora librerías, drumkits, tutoriales y plugins gratuitos. Cada sección est�
 
 ## 🧱 Tech Stack
 
-- **Frontend:** React (Vite)  
+- **Frontend:** React (Vite)
 - **Backend:** Node.js + Express  
 - **Base de datos:** SQLite  
 - **ORM:** Prisma  
@@ -41,7 +41,8 @@ bambilab/
 ### Instalación
 
 ```bash
-cd client
+cd frontend
+npm create vite@latest
 npm install
 npm run dev
 ```
@@ -66,7 +67,7 @@ client/
 ### Instalación
 
 ```bash
-cd server
+cd backend
 npm install
 npm run dev
 ```
