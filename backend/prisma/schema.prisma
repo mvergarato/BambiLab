@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model Song {
+  id        String     @id @default(uuid())
+  title     String
+  price     Int
+  tag       String      
+  bpm       Int
+  producer  String
+  url       String
+  artist    String
+  createdAt DateTime   @default(now())
+  purchases Purchase[]
+}
+
+
+model User {
+  id        String     @id @default(uuid())
+  email     String     @unique
+  password  String
+  role      Role       @default(USER)
+  balance   Int        @default(1000)
+  purchases Purchase[]
+  createdAt DateTime   @default(now())
+}
+
+model Purchase {
+  id        String   @id @default(uuid())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  song      Song     @relation(fields: [songId], references: [id])
+  songId    String
+  createdAt DateTime @default(now())
+}
+
